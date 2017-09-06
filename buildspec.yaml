@@ -1,0 +1,19 @@
+verson: 0.2
+phases:
+  install:
+    commands:
+      - wget https://releases.hashicorp.com/terraform/0.10.2/terraform_0.10.2_linux_amd64.zip
+      - unzip terraform_0.10.2_linux_amd64.zip
+      - sudo mv terraform /bin
+      - rm terraform_0.10.2_linux_amd64.zip
+      - apt-get update
+      - terraform --version
+      - terraform init
+  build:
+    commands:
+      - terraform apply
+      - echo "Post apply build"
+  post_build:
+    commands:
+      - command
+      - echo 'post_build nothing to do for now'
