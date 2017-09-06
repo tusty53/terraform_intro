@@ -1,11 +1,16 @@
 version: 0.2
+env:
+  variables:
+    AWS_ACCESS_KEY_ID: "AKIAI5T4CX5UC565QGXQ"
+    AWS_SECRET_ACCESS_KEY: "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"
+    AWS_DEFAULT_REGION: "us-east-1"
 phases:
   install:
     commands:
-      - wget https://releases.hashicorp.com/terraform/0.10.2/terraform_0.10.2_linux_amd64.zip
-      - unzip terraform_0.10.2_linux_amd64.zip
+      - wget https://releases.hashicorp.com/terraform/0.10.3/terraform_0.10.3_linux_amd64.zip
+      - unzip terraform_0.10.3_linux_amd64.zip
       - sudo mv terraform /bin
-      - rm terraform_0.10.2_linux_amd64.zip
+      - rm terraform_0.10.3_linux_amd64.zip
       - apt-get update
       - terraform --version
       - terraform init
